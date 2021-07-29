@@ -1,4 +1,4 @@
-package org.shubh.kafka.tutorial2;
+package kafka.tutorial2;
 
 import com.google.common.collect.Lists;
 import com.twitter.hbc.ClientBuilder;
@@ -99,7 +99,7 @@ public class TwitterProducer {
         // creating high throughput producer (at the expense of a bit of latency and CPU usage)
         properties.setProperty(ProducerConfig.COMPRESSION_TYPE_CONFIG, "snappy");
         properties.setProperty(ProducerConfig.LINGER_MS_CONFIG, "20");
-        properties.setProperty(ProducerConfig.BATCH_SIZE_CONFIG, Integer.toString(32 * 1024)); // 32 KB
+        properties.setProperty(ProducerConfig.BATCH_SIZE_CONFIG, Integer.toString(32 * 1024)); // 32 KB batch size
 
         // create producer
         KafkaProducer<String, String> producer = new KafkaProducer<String, String>(properties);
